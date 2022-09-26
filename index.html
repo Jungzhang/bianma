@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>在线编码解码</title>
+    <link rel="stylesheet" href="css/bianma.css">
+</head>
+<body>
+
+<div class="comm-content-box clearfloat">
+    <div class="comm-content clearfloat">
+        <div>
+            <div class="title">
+                <p>在线编码解码</p>
+                <p>在下面的任意输入框中输入你想编码解码的字符串</p>
+            </div>
+            <div class="warpper">
+                <div>
+                    <p>文本格式</p>
+                    <textarea name="" id="string" cols="50" rows="10" oninput="updateByString(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>\uxxxx</p>
+                    <textarea name="" id="utf16-escape" cols="50" rows="10"
+                              oninput="updateByUtf16(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>\UXXXXXXXX</p>
+                    <textarea name="" id="utf32-escape" cols="50" rows="10"
+                              oninput="updateByUtf32(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>&#DDDD;</p>
+                    <textarea name="" id="numref-dec" cols="50" rows="10"
+                              oninput="updateByNumRefDec(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>&#xXXXX;</p>
+                    <textarea name="" id="numref-hex" cols="50" rows="10"
+                              oninput="updateByNumRefHex(this.value)"></textarea>
+                </div>
+
+                <div>
+                    <p>Punycode</p>
+                    <textarea name="" id="punycode" cols="50" rows="10"
+                              oninput="updateByPunyCode(this.value)"></textarea>
+                </div>
+                <div class="choose">
+                    <form action="index.html" class="encoding">
+                        <p>选择需要的编码方式</p>
+                        <select name="" id="encoding" onchange="updateByForm()">
+                            <option value="UTF-8">UTF-8</option>
+                            <option value="Shift_JIS">Shift_JIS</option>
+                            <option value="EUC-JP">EUC-JP</option>
+                            <option value="ISO-2022-JP">ISO-2022-JP</option>
+                            <option value="ISO-8859-1">ISO-8859-1</option>
+                        </select>
+                    </form>
+
+                </div>
+                <div>
+                    <p>\xXX</p>
+                    <textarea name="" id="hex-escape" cols="50" rows="10" oninput="updateByHex(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>\OOO</p>
+                    <textarea name="" id="oct-escape" cols="50" rows="10" oninput="updateByOct(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>base64</p>
+                    <textarea name="" id="base64" cols="50" rows="10" oninput="updateByBase64(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>Quoted-printable</p>
+                    <textarea name="" id="quoted-printable" cols="50" rows="10"
+                              oninput="updateByQuotedPrintable(this.value)"></textarea>
+                </div>
+
+                <div>
+                    <p>url</p>
+                    <textarea name="" id="url" cols="50" rows="10" oninput="updateByUrl(this.value)"></textarea>
+                </div>
+
+                <div>
+                    <p>MIME+base64</p>
+                    <textarea name="" id="mime-b" cols="50" rows="10"
+                              oninput="updateByMimeBase64(this.value)"></textarea>
+                </div>
+                <div>
+                    <p>MIME + Quoted-printable</p>
+                    <textarea name="" id="mime-q" cols="50" rows="10"
+                              oninput="updateByMimeQuotedPrintable(this.value)"></textarea>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="js/punycode.js"></script>
+<script src="js/base64.js"></script>
+<script src="js/sijsmap.js"></script>
+<script src="js/iso.js"></script>
+<script src="js/strul.js"></script>
+<script src="js/bianma.js"></script>
+</body>
+</html>
